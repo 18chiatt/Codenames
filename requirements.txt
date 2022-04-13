@@ -1,0 +1,5 @@
+
+cachetools
+Wikipedia-API
+discord.py
+numpy

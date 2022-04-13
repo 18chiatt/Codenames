@@ -1,0 +1,13 @@
+
+*.env
+*.npy
+imgs/
+__pycache__/
+
+pagecache
+pageCache
+relatedCache
+searchCache
+words.txt
+glove_vectors.txt
+
