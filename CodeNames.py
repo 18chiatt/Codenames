@@ -157,9 +157,10 @@ class Game:
     def __init__(self, words=None) -> None:
         self.wordsInPlay = words or []
         self.ready = False
+        self.initErrors = []
         for word in words:
             if not (word in table):
-                print(f"{word} not in dictionary :(")
+                self.initErrors.append(f"{word} not in dictionary")
             getRelated(word)
         self.ready = True
 
@@ -175,7 +176,7 @@ class Game:
         print("\n====Semantic similarity====\n", file=self.stream)
         for confidence, word in predictions:
             perecent = confidencePercent(confidence) * 100
-            print(f'{word} {perecent:.2f}%', file=self.stream)
+            print(f'{word}: {perecent:.2f}%', file=self.stream)
 
 
     def getAndDisplayWikipediaSuggestions(self, hint: str, guesses: int)-> list[str]:
@@ -230,7 +231,7 @@ class Game:
         print("\n====Wikipedia similarity====\n", file=self.stream)
         matches.sort(reverse=True)
         for score, word, reason  in matches[:guesses+1]:
-            print(f'{word} {(rawSigmoid(score) )*100:.2f}% {reason}', file=self.stream)
+            print(f'{word}: {(rawSigmoid(score) )*100:.2f}% \t {reason}', file=self.stream)
         print('', file=self.stream)
 
     def setWords(self, words):

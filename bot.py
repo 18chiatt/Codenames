@@ -42,25 +42,30 @@ class MyClient(discord.Client):
                 await message.channel.send("Sorry, max game size is 50")
                 return
             game = Game(words)
+            if game.initErrors:
+                await message.channel.send(f"Warning: {','.join(game.initErrors)}" )
             self.games[str(user)] = game
             await message.channel.send('Inited')
         
         if text.startswith("#guess"):
-            segments = text.split(' ')
-            count = None
-            if not self.games.get(str(user) ):
-                await message.channel.send("Please start a game first")
-                return
-            game: Game = self.games.get(str(user))
-            if len(segments) != 3:
-                await message.channel.send("Usage: #guess {hint} {quantity}")
             try:
-                count = int(segments[2],10)
-            except:
-                await message.channel.send("Usage: #guess {hint} {quantity}")
-            retVal = game.turn(segments[1],count)
-            strs = "".join([g for g in retVal])
-            await message.channel.send(strs)
+                segments = text.split(' ')
+                count = None
+                if not self.games.get(str(user) ):
+                    await message.channel.send("Please start a game first")
+                    return
+                game: Game = self.games.get(str(user))
+                if len(segments) != 3:
+                    await message.channel.send("Usage: #guess {hint} {quantity}")
+                try:
+                    count = int(segments[2],10)
+                except:
+                    await message.channel.send("Usage: #guess {hint} {quantity}")
+                retVal = game.turn(segments[1],count)
+                strs = "".join([g for g in retVal])
+                await message.channel.send(strs)
+            except Exception as e:
+                await message.channel.send(f"An error occured while processing your request: {e.with_traceback}")
         
         if text.startswith("#reduce"):
             game = self.games.get(str(user))
