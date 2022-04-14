@@ -23,9 +23,21 @@ class MyClient(discord.Client):
         user = message.author
         if not message.content.startswith('#'):
             return
+        text :str = message.content.lower()
+        if text.startswith("#about"):
+            responseLines = ["Start a new game with the #init command, for example: ",
+                       "```#init cheese broccoli shoe glove hand steak```",
+                       "Remove words from your current game using #remove, for example:",
+                       "```#remove glove hand```",
+                       "Get predictions of a guess using the #guess command, for example:",
+                       "```#guess food 2```"]
+            await message.channel.send("\n".join(responseLines))
 
-        if message.content.startswith('#init'):
-            words = message.content.split(' ')[1:]
+        if text.startswith('#init'):
+            words = text.split(' ')[1:]
+            if len(words) < 4:
+                await message.channel.send("Sorry, please enter at least 5 words for analysis")
+                return
             if len(words) > 50:
                 await message.channel.send("Sorry, max game size is 50")
                 return
@@ -33,8 +45,8 @@ class MyClient(discord.Client):
             self.games[str(user)] = game
             await message.channel.send('Inited')
         
-        if message.content.startswith("#guess"):
-            segments = message.content.split(' ')
+        if text.startswith("#guess"):
+            segments = text.split(' ')
             count = None
             if not self.games.get(str(user) ):
                 await message.channel.send("Please start a game first")
@@ -50,12 +62,12 @@ class MyClient(discord.Client):
             strs = "".join([g for g in retVal])
             await message.channel.send(strs)
         
-        if message.content.startswith("#reduce"):
+        if text.startswith("#reduce"):
             game = self.games.get(str(user))
             if not game:
                 await message.channel.send("Please start a game first")
                 return
-            toReduce = set(map(lambda x : x.lower(), message.content.split(" ")[1:]))
+            toReduce = set(map(lambda x : x.lower(), text.split(" ")[1:]))
             newwords = list(filter(lambda x : x not in toReduce, game.wordsInPlay))
             game.setWords(newwords)
             await message.channel.send(f"@{str(user)}\nReduced successfully, new word list: {' '.join(newwords)}"  )
