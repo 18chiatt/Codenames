@@ -203,6 +203,14 @@
 	display: none;
 }
 
+a {
+	text-decoration: underline;
+}
+
+.action-button {
+	text-decoration: none;
+}
+
 @media only screen and (max-width: 1360px) {
 	.mat-card {
 		max-width: 100%;
