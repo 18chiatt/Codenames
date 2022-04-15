@@ -102,10 +102,12 @@ class MyClient(discord.Client):
                 game: Game = self.games.get(str(user))
                 if len(segments) != 3:
                     await message.channel.send("Usage: #guess {hint} {quantity}")
+                    return
                 try:
                     count = int(segments[2],10)
                 except:
                     await message.channel.send("Usage: #guess {hint} {quantity}")
+                    return
                 retVal = game.turn(segments[1],count)
                 strs = "".join([g for g in retVal])
                 await message.channel.send(strs)
