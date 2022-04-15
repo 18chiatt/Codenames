@@ -25,3 +25,10 @@ h1 {
 .mat-dialog-container {
 	width: 100vw !important;
 }
+
+.main-content {
+	background-image: url("./assets/output-onlinepngtools.png");
+}
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';

@@ -8,6 +8,7 @@ import { MatButtonModule } from "@angular/material/button";
 import { MatCardModule } from "@angular/material/card";
 import { MatDialogModule } from "@angular/material/dialog";
 import { IvyCarouselModule } from "angular-responsive-carousel";
+import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 
 @NgModule({
 	declarations: [AppComponent],
@@ -19,6 +20,7 @@ import { IvyCarouselModule } from "angular-responsive-carousel";
 		MatCardModule,
 		MatDialogModule,
 		IvyCarouselModule,
+		NgbModule,
 	],
 	providers: [],
 	bootstrap: [AppComponent],

@@ -10,6 +10,4 @@ export class AppComponent {
 	title = "codenames-app";
 
 	constructor(private _dialog: MatDialog) {}
-
-	images = [{ path: "/assets/demo.png" }];
 }

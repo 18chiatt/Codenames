@@ -1,8 +1,8 @@
 <div class="top-segment">
 	<div class="header">
 		<div>
-			<img src="/assets/pp-modified.png" alt="" class="circle" />
-			<img src="/assets/logo.png" alt="Page Logo" class="logo-image" />
+			<img src="./assets/pp-modified.png" alt="" class="circle" />
+			<img src="./assets/logo.png" alt="Page Logo" class="logo-image" />
 		</div>
 
 		<a mat-stroked-button href="https://github.com/18chiatt/Codenames" target="blank" class="source-button"
@@ -20,23 +20,30 @@
 	</div>
 
 	<div class="image-holder">
-		<img src="/assets/codenames.jpg" alt="" class="main-image mat-elevation-z8" />
+		<img src="./assets/codenames.jpg" alt="" class="main-image mat-elevation-z8" />
 	</div>
 </div>
 <div class="main-content">
 	<mat-card class="taller mat-elevation-z24">
 		<mat-card-title>See it in action 🚀🚀🚀</mat-card-title>
-		<carousel [cellsToShow]="1" [height]="350" class="top-margin">
-			<div class="carousel-cell">
-				<img src="/assets/demo2.png" alt="" class="rounded" />
-			</div>
-			<div class="carousel-cell">
-				<img src="/assets/demo3.png" alt="" class="rounded" />
-			</div>
-			<div class="carousel-cell">
-				<img src="/assets/demo.png" alt="" class="rounded" />
-			</div>
-		</carousel>
+
+		<ngb-carousel class="carousel" [interval]="2000000">
+			<ng-template ngbSlide>
+				<div class="picsum-img-wrapper">
+					<img src="./assets/demo2.png" alt="Random first slide" class="carousel-image" />
+				</div>
+			</ng-template>
+			<ng-template ngbSlide>
+				<div class="picsum-img-wrapper">
+					<img src="./assets/demo3.png" alt="Random second slide" class="carousel-image" />
+				</div>
+			</ng-template>
+			<ng-template ngbSlide>
+				<div class="picsum-img-wrapper">
+					<img src="./assets/demo.png" alt="Random third slide" class="carousel-image" />
+				</div>
+			</ng-template>
+		</ngb-carousel>
 		<div class="button-aligner">
 			<a mat-raised-button class="action-button" href="https://discordapp.com/users/963235221501800498" target="blank"
 				>Try it out</a
@@ -44,11 +51,11 @@
 		</div>
 	</mat-card>
 
-	<mat-card class="mat-elevation-z24">
+	<mat-card class="card mat-elevation-z24">
 		<mat-card-title>Add to your server 😀👍</mat-card-title>
 		<p>
 			This bot can easily be added to any discord server which you have permission to manage. Simply click the button
-			below to authorize the bot on your server. You can also self host the bot using the instrctions found on the
+			below to authorize the bot on your server. You can also self host the bot using the instructions found on the
 			project's Github page found <a href="https://github.com/18chiatt/Codenames">here</a>
 		</p>
 		<div class="button-aligner">
@@ -63,11 +70,38 @@
 
 	<mat-card class="mat-elevation-z24">
 		<mat-card-title>Whitepaper - How it works 🤓🤓🤓</mat-card-title>
-		<embed src="/assets/AI.pdf" type="application/pdf" class="pdf" />
+		<object data="./assets/AI.pdf" type="application/pdf" class="pdf">
+			<p>
+				Your web browser doesn't have a PDF plugin. Instead you can
+				<a href="./assets/AI.pdf" target="blank">click here to download the PDF file.</a>
+			</p>
+		</object>
 		<div class="button-aligner">
-			<a mat-raised-button class="action-button" href="discordapp.com/users/256607419604402176"
+			<a mat-raised-button class="action-button" href="https://www.discordapp.com/users/256607419604402176"
 				>Shoot me a message on Discord</a
 			>
 		</div>
 	</mat-card>
+</div>
+
+<div class="footer">
+	<div class="disclaimer">
+		This page is in no way associated with Codenames or Czech Games.
+		<a href="https://czechgames.com/en/codenames/" target="_blank" rel="noopener noreferrer"
+			>Learn more about the game here</a
+		>
+	</div>
+	<div class="footer-content">
+		<div class="insta">
+			<img src="./assets/insta.png" alt="" width="30px" />
+			<a href="https://www.instagram.com/hiatt_chase/" target="_blank" rel="noopener noreferrer" class="insta-text"
+				>@Hiatt_Chase</a
+			>
+		</div>
+
+		<div class="insta">
+			<img src="./assets/github.png" alt="" width="30px" class="github" />
+			<a href="https://github.com/18chiatt" target="_blank" rel="noopener noreferrer" class="insta-text">@18chatt</a>
+		</div>
+	</div>
 </div>
