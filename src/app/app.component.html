@@ -70,7 +70,13 @@
 
 	<mat-card class="mat-elevation-z24">
 		<mat-card-title>Whitepaper - How it works 🤓🤓🤓</mat-card-title>
+		<div *ngIf="showDummy" class="placeholder">
+			<div class="fakePage"></div>
+		</div>
 		<iframe
+			[class.invisible]="showDummy"
+			*ngIf="!pulse"
+			(load)="loadedSuccessfully()"
 			src="https://docs.google.com/viewer?url=https://18chiatt.github.io/Codenames/assets/AI.pdf&embedded=true"
 			style="max-height: 100vh"
 			frameborder="0"

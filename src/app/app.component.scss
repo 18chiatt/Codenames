@@ -179,12 +179,33 @@
 	border-radius: 35px;
 }
 
+.placeholder {
+	height: 100vh;
+	background-color: lightgray;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 1000px;
+	width: 1200px;
+	margin: 30px;
+	border-radius: 5px;
+	max-width: 90%;
+}
+
+.fakePage {
+	height: 95%;
+	width: 80%;
+	background-color: white;
+	padding-top: 10px;
+}
+
+.invisible {
+	display: none;
+}
+
 @media only screen and (max-width: 1360px) {
 	.mat-card {
 		max-width: 100%;
 		margin-bottom: 70px;
-	}
-
-	.pdf {
 	}
 }
