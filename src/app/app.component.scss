@@ -1,5 +1,6 @@
 .top-segment {
 	background-color: #222;
+	z-index: 10;
 }
 
 .header {
@@ -53,6 +54,10 @@
 .heading {
 	color: white;
 	display: block;
+	text-align: center;
+}
+
+.invisible-mobile {
 }
 
 .white-link {
@@ -116,6 +121,7 @@
 
 .pdf {
 	height: 1000px;
+	max-height: 70vh;
 	width: 1200px;
 	margin: 30px;
 	border-radius: 5px;
@@ -125,9 +131,6 @@
 .footer {
 	background-color: #222;
 	padding: 30px;
-}
-.card {
-	width: max-content;
 }
 
 .footer-content {
@@ -180,12 +183,10 @@
 }
 
 .placeholder {
-	height: 100vh;
 	background-color: lightgray;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 1000px;
 	width: 1200px;
 	margin: 30px;
 	border-radius: 5px;
@@ -211,9 +212,44 @@ a {
 	text-decoration: none;
 }
 
-@media only screen and (max-width: 1360px) {
+@media only screen and (max-width: 1200px) {
 	.mat-card {
+		max-width: 95%;
+		margin-bottom: 40px;
+		padding: 10px;
+	}
+
+	.action-button {
+		width: 100%;
+	}
+
+	.button-aligner {
+		padding-right: 0px;
+	}
+	.main-content {
+		padding: 10px;
+	}
+
+	.invisible-mobile {
+		display: none;
+	}
+
+	.pdf {
+		margin: 0;
 		max-width: 100%;
-		margin-bottom: 70px;
+	}
+
+	.fakePage {
+		margin: 0;
+		width: 90%;
+	}
+
+	.placeholder {
+		max-width: 100%;
+		margin: 0;
+	}
+
+	.mat-card-title {
+		text-align: center;
 	}
 }
