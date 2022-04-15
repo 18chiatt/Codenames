@@ -1,0 +1,119 @@
+.top-segment {
+	background-color: #222;
+}
+
+.header {
+	padding: 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	position: relative;
+}
+
+.logo-image {
+	height: 40px;
+}
+
+.subtitle {
+	color: #a7a7a7;
+	text-align: center;
+}
+
+.top-margin {
+	margin-top: 20px;
+}
+
+.button-aligner {
+	display: flex;
+	justify-content: flex-end;
+	margin-top: 20px;
+	padding-right: 30px;
+}
+
+.action-button {
+	background-color: #d05b54;
+	color: white;
+}
+
+.source-button {
+	font-size: 12px;
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	color: white;
+	border: 1px solid white;
+}
+
+.primary-text {
+	display: flex;
+	justify-content: center;
+}
+
+.heading {
+	color: white;
+	display: block;
+}
+
+.white-link {
+	color: #a7a7a7;
+}
+
+.image-holder {
+	display: flex;
+	justify-content: center;
+}
+
+.main-image {
+	border-radius: 5px;
+	height: 200px;
+	margin-bottom: 20px;
+}
+
+.main-content {
+	padding: 30px;
+	padding-top: 60px;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	background-image: url("/assets/output-onlinepngtools.png");
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.mat-card {
+	width: 1260px;
+	margin: auto;
+	margin-bottom: 50px;
+}
+
+.width-reducer {
+	width: 100%;
+}
+
+.circle {
+	height: 40px;
+	margin-right: 20px;
+}
+
+.section-heading {
+	text-align: center;
+}
+
+.photo-holder {
+	display: flex;
+	justify-content: center;
+}
+
+.content {
+	max-width: 1000px;
+}
+
+.pdf {
+	height: 1000px;
+	width: 1200px;
+	margin: 30px;
+	border-radius: 5px;
+}
